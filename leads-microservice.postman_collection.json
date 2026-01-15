@@ -1,0 +1,284 @@
+{
+  "info": {
+    "_postman_id": "ac1b22d6-c3bf-486a-a9a7-2402e4f42a60",
+    "name": "leads-microservice",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "30779565"
+  },
+  "item": [
+    {
+      "name": "health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:1234/health",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "1234",
+          "path": [
+            "health"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "signup",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"wwyzfyf067@pandai.in\",\r\n    \"password\": \"test\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:1234/authentication/signup",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "1234",
+          "path": [
+            "authentication",
+            "signup"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"wwyzfyf067@pandai.in\",\r\n    \"password\": \"test\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:1234/authentication/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "1234",
+          "path": [
+            "authentication",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create lead",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{access_token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"externalId\": \"5788ef90-920b-403f-ac44-7b679c7979d3\",\r\n    \"firstName\": \"Svitolyub\",\r\n    \"lastName\": \"Andruhiv\",\r\n    \"email\": \"svitolyub.andruhiv@example.com\",\r\n    \"phone\": \"(067) T38-6980\",\r\n    \"city\": \"Dolinska\",\r\n    \"state\": \"Kiyivska\",\r\n    \"country\": \"Ukraine\",\r\n    \"dob\": \"1984-01-15T22:51:28.054Z\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:1234/leads",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "1234",
+          "path": [
+            "leads"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "findall leads",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{access_token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"externalId\": \"5788ef90-920b-403f-ac44-7b679c7979d3\",\r\n    \"firstName\": \"Svitolyub\",\r\n    \"lastName\": \"Andruhiv\",\r\n    \"email\": \"svitolyub.andruhiv@example.com\",\r\n    \"phone\": \"(067) T38-6980\",\r\n    \"city\": \"Dolinska\",\r\n    \"state\": \"Kiyivska\",\r\n    \"country\": \"Ukraine\",\r\n    \"dob\": \"1984-01-15T22:51:28.054Z\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:1234/leads",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "1234",
+          "path": [
+            "leads"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "lead detail",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{access_token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"externalId\": \"5788ef90-920b-403f-ac44-7b679c7979d3\",\r\n    \"firstName\": \"Svitolyub\",\r\n    \"lastName\": \"Andruhiv\",\r\n    \"email\": \"svitolyub.andruhiv@example.com\",\r\n    \"phone\": \"(067) T38-6980\",\r\n    \"city\": \"Dolinska\",\r\n    \"state\": \"Kiyivska\",\r\n    \"country\": \"Ukraine\",\r\n    \"dob\": \"1984-01-15T22:51:28.054Z\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:1234/leads/5788ef90-920b-403f-ac44-7b679c7979d3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "1234",
+          "path": [
+            "leads",
+            "5788ef90-920b-403f-ac44-7b679c7979d3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "summary lead",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{access_token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:1234/leads/5788ef90-920b-403f-ac44-7b679c7979d3/summary",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "1234",
+          "path": [
+            "leads",
+            "5788ef90-920b-403f-ac44-7b679c7979d3",
+            "summary"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Random User Generator API",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://randomuser.me/api?results=10",
+          "protocol": "https",
+          "host": [
+            "randomuser",
+            "me"
+          ],
+          "path": [
+            "api"
+          ],
+          "query": [
+            {
+              "key": "results",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "access_token",
+      "value": ""
+    }
+  ]
+}

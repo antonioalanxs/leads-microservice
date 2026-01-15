@@ -1,0 +1,16 @@
+Generate a summary of the lead and a suggested next action.
+
+The response must strictly have the following JSON format.
+
+{ "summary": string, "next_action": string }
+
+Both fields are required and each must be at most 1000 characters.
+
+Below are the lead details.
+* Name - {{name}}
+* Email - {{email}}
+* Phone - {{phone}}
+* City - {{city}}
+* Country - {{country}}
+
+[IMPORTANT] Do not include any additional information outside of the JSON structure.
